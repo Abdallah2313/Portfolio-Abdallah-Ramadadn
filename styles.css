@@ -1,0 +1,129 @@
+/* إعدادات عامة */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* الهيدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-icons a img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.editor-photo {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.editor-name {
+    color: #1e90ff;
+}
+
+/* صندوق "Video Editing" */
+.flashing-box {
+    border: 2px solid #1e90ff;
+    padding: 10px;
+    margin: 20px auto;
+    width: fit-content;
+    animation: flashing 1s infinite;
+}
+
+.flashing-box p {
+    font-size: 1.5em;
+    color: #1e90ff;
+}
+
+@keyframes flashing {
+    0%, 100% { border-color: #1e90ff; }
+    50% { border-color: transparent; }
+}
+
+/* قسم المهارات */
+.skills-section {
+    text-align: center;
+    perspective: 1000px;
+}
+
+.cylinder {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotateCylinder 10s linear infinite;
+    margin-left: 550px; /* حرك الأيقونات نحو اليسار */
+
+}
+
+.icon {
+    position: absolute;
+    font-size: 1em;
+    color: #1e90ff;
+    transform-style: preserve-3d;
+
+    /* وضع الأيقونات في أماكن مختلفة حول الأسطوانة */
+}
+
+.icon:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+.icon:nth-child(2) { transform: rotateY(72deg) translateZ(100px); }
+.icon:nth-child(3) { transform: rotateY(144deg) translateZ(100px); }
+.icon:nth-child(4) { transform: rotateY(216deg) translateZ(100px); }
+.icon:nth-child(5) { transform: rotateY(288deg) translateZ(100px); }
+
+/* تأثير الدوران */
+@keyframes rotateCylinder {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* قسم الفيديوهات */
+.videos-section .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.video-item iframe {
+    width: 50%;
+    height: 300px;
+}
+
+/* خط الفاصل */
+.divider {
+    border-top: 2px solid #1e90ff;
+    margin: 20px 0;
+}
+
+/* قسم الفيديوهات الطويلة */
+.long-videos-section .long-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.long-video-item {
+    border: 2px solid #fff;
+    animation: flashing 1s infinite;
+}
+
+.long-video-item iframe {
+    width: 100%;
+    height: 200px;
+}
+@media (max-width: 768px) {
+    /* أكواد لتغيير تصميم العناصر عند الشاشة الصغيرة */
+    .image-class {
+        width: 100%;
+        height: auto;
+    }
+}
+
